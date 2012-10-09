@@ -14,15 +14,22 @@ class Connection(object):
         self._requests = requests
 
     def get(self, resource, payload, headers=None):
-        headers = self._headers(headers)
-        url = self._get_api_url(resource)
-        r = self._requests.get(url, params=payload, headers=headers)
-        return self._handle_response(r)
+        return self._method('get', resource, payload, headers)
 
     def post(self, resource, payload, headers=None):
+        return self._method('post', resource, payload, headers)
+
+    def put(self, resource, payload, headers=None):
+        return self._method('put', resource, payload, headers)
+
+    def delete(self, resource, payload, headers=None):
+        return self._method('delete', resource, payload, headers)
+
+    def _method(self, method, resource, payload, headers):
         headers = self._headers(headers)
         url = self._get_api_url(resource)
-        r = self._requests.post(url, params=payload, headers=headers)
+        r_method = getattr(self._requests, method)
+        r = r_method(url, params=payload, headers=headers)
         return self._handle_response(r)
 
     def _handle_response(self, r_obj):
