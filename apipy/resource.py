@@ -14,10 +14,8 @@ class Resource(object):
         return self._con.post(self.name, kwargs or {})
 
     def update(self, **kwargs):
-        #return self._con.put(self.name, kwargs)
-        pass
+        return self._con.put(self.name, kwargs)
 
     def delete(self, **kwargs):
-        # return self._con.put(self.name, kwargs)
-        pass
+        return self._con.delete(self.name, kwargs)
 
