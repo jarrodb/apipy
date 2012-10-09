@@ -5,8 +5,8 @@ Top-down model:
 
 Api -> Engine -> Resource
 
-example
--------
+postfix.py example
+------------------
 
 ```python
 
@@ -34,9 +34,6 @@ class Api(Apipy):
 ```
 
 ```python
-##########################################
-
-Python 2.7.2 (default, Jun 20 2012, 16:23:33)
 >>> from postfix import Api
 >>> papi = Api()
 >>> papi.postfix
