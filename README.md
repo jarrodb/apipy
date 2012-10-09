@@ -8,6 +8,8 @@ Api -> Engine -> Resource
 example
 -------
 
+```python
+
 from apipy import Apipy, Engine, Resource
 
 
@@ -28,6 +30,8 @@ class Postfix(Engine):
 
 class Api(Apipy):
     postfix = Postfix()
+
+```
 
 ```python
 ##########################################
