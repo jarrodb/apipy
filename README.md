@@ -29,6 +29,7 @@ class Postfix(Engine):
 class Api(Apipy):
     postfix = Postfix()
 
+```python
 ##########################################
 
 Python 2.7.2 (default, Jun 20 2012, 16:23:33)
@@ -57,3 +58,4 @@ Python 2.7.2 (default, Jun 20 2012, 16:23:33)
 ## Fetch domain resource by name
 >>> papi.postfix.domain.get(domain='ipglobal.net')
 {u'response': [{u'date': u'2012-10-08T00:00:00', u'domain': u'ipglobal.net', u'id': 38}]}
+```
